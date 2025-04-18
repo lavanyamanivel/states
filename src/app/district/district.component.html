@@ -1,0 +1,39 @@
+ 
+ <div class="container-fluid bg">
+
+  <div class="row">
+    <div class="col-md-3 ">
+      <div *ngFor="let dist of districts">
+        <button (click)="getById(dist.districtid)" class="btn btn-light ms-4 mb-3">{{ dist.name }}</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 im">
+      <div *ngIf="init !== 'true'">
+        <img [src]="getStaImageUrl()" height="800px" width="100%" alt="">
+      </div>
+      <div *ngIf="init === 'true'">
+        <img [src]="getImageUrl(DistrictDetails.mapurl)" height="800px" width="100%" alt="">
+      </div>
+    </div>
+
+    <div class="col-md-3" style="height: 100vh;">
+      <div *ngIf="init === 'true'">
+        <div *ngIf="DistrictDetails">
+
+          <h1>State</h1>
+          <h3>District: {{ DistrictDetails.name }}</h3>
+          <h3>Collector: {{ DistrictDetails.collector }}</h3>
+          <div>
+            <p>Current Date: {{ currentDate | date:'longDate' }}</p>
+          </div>
+
+
+          <button routerLink="/stateCom" class="fix  btn btn-light ms-4 mb-3"> back </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

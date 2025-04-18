@@ -1,0 +1,146 @@
+<!-- login -->
+
+<body>
+    <div class="end">
+        <div class="container mt-5 ">
+            <div class="row ">
+                <div class="col"><br><br>
+                    <button (click)="toggleForms('state')" class="ms-5" >State</button>
+                    <button (click)="toggleForms('district')" class="ms-5">District</button><br><br>
+
+
+                    <form [formGroup]="stateForm" *ngIf="showStateForm">
+
+                        <div class="form-group">
+                            <label for="stateName">Name:</label>
+                            <input type="text" class="form-control" id="stateName" placeholder="State Name"
+                                formControlName="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stateCapital">Capital:</label>
+                            <input type="text" class="form-control" id="stateCapital" placeholder="Enter the Capital"
+                                formControlName="capital" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stateLanguage">Language:</label>
+                            <textarea class="form-control" id="stateLanguage" placeholder="Enter the Language"
+                                formControlName="language" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stateStateId">State ID:</label>
+                            <input type="text" class="form-control" id="stateStateId" placeholder="Enter the State ID"
+                                formControlName="stateid" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stateChiefMinister">Chief Minister:</label>
+                            <input type="text" class="form-control" id="stateChiefMinister"
+                                placeholder="Enter the ChiefMinister" formControlName="chiefminister" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stateImage">Image:</label>
+                            <input type="file" class="form-control-file  form-control" id="stateImage"
+                                (change)="onFileChange($event, 'state')" required>
+                        </div>
+
+                        <div *ngIf="stateForm.get('image')?.value" class="mb-2">
+                            <img [src]="stateForm.get('image')?.value" alt="Selected Image"
+                                class="img-thumbnail  form-control" height="100px" width="100px">
+                        </div>
+                        <button type="button" class="btn btn-primary ms-3" (click)="register('state')" >Upload</button>
+                    </form>
+                </div>
+
+
+
+                <!-- district -->
+
+                <!-- <div class="col"><br><br> -->
+                <!-- <button (click)="toggleForms('district')">District</button><br><br> -->
+                <form [formGroup]="districtForm" *ngIf="showDistrictForm">
+
+
+                    <div class="form-group">
+                        <label for="districtName">Name:</label>
+                        <input type="text" class="form-control" id="districtName" placeholder="Enter District Name"
+                            formControlName="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="districtCollector">Collector:</label>
+                        <input type="text" class="form-control" id="districtCollector"
+                            placeholder="Enter The District Collector" formControlName="collector" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="districtDistrictId">District ID:</label>
+                        <textarea class="form-control" id="districtDistrictId" placeholder="Enter  The District ID"
+                            formControlName="districtid" required></textarea>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="districtStateId">State ID:</label>
+                        <input type="text" class="form-control" id="districtStateId" placeholder="Enter The State ID"
+                            formControlName="stateid" required>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="districtWeatherMap">Weather Map:</label>
+                        <input type="text" class="form-control" id="districtWeatherMap"
+                            placeholder="Enter The Weather Map" formControlName="weathermap" required>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="districtImage">Image:</label>
+                        <input type="file" class="form-control-file form-control" id="districtImage"
+                            (change)="onFileChange($event, 'district')" required>
+                    </div>
+
+                    <div *ngIf="districtForm.get('image')?.value" class="mb-2">
+                        <img [src]="districtForm.get('image')?.value" alt="Selected Image"
+                            class="img-thumbnail form-control" height="100px" width="100px">
+                    </div>
+
+                    <button type="button" class="btn btn-primary" (click)="register('district')">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br><br><br>
+</body>

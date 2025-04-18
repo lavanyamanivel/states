@@ -1,0 +1,23 @@
+
+<body class="bg">
+<div class="row ">
+  <div class="col-md-3 ">
+    <div *ngFor="let state of states">
+      <button (click)="getById(state.stateid)" class="btn btn-light ms-4 mb-3">
+        {{ state.name }}
+      </button>
+    </div>
+  </div>
+  <div class="col-md-6 im">
+    <img [src]="getImageUrl(StateDetails.mapurl)"alt="" height="100%" width="100%"  class="im">
+  </div>
+  <div class="col-md-3 ">
+    <div *ngIf="StateDetails">
+      <h3>{{ StateDetails.name }} Details</h3>
+      <p>{{ StateDetails.capital }}</p>
+    </div>
+    <button (click)="getState(StateDetails.stateid)" class="fix btn btn-light ms-5 mb-3"> District</button>
+    <button (click)="goBack()" class="fix btn btn-light ms-5 mb-3">Back</button>
+  </div>
+</div>
+</body>
